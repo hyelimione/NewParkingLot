@@ -9,19 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using TableDependency.SqlClient;
+using TableDependency.SqlClient.Base.Enums;
+using TableDependency.SqlClient.Base.EventArgs;
 
 namespace Parkings
 {
     public partial class Form1 : Form
     {
-        string strConn = "Data Source=192.168.4.175;Initial Catalog=Parkings;User ID=sa;Password=1234";
-        private BindingSource ParkingLotbindingSource = new BindingSource();
-        SqlDependency sd;
+        public SqlTableDependency<SensorValue> sensorvalue_table_dependency;
+        string strCon = "Data Source=192.168.4.175;Initial Catalog=Parkings;User ID=sa;Password=1234";
         SqlConnection con;
-        int OutTotal, TopTotal, NewTotal;
-        int OutTrueCount, TopTrueCount, NewTrueCount;
-        bool sensorvalue = new bool();
-        int parkinglotid, parkingpositionid;
+        int Total1, Total2, Total3, Total4, Total5, Total6, Total7, Total8, Total9, Total10;
+        int Count1, Count2, Count3, Count4, Count5, Count6, Count7, Count8, Count9, Count10;
+        bool sensorvalue;
+        int parkinglotid;
 
         public Form1()
         {
@@ -30,32 +32,39 @@ namespace Parkings
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SqlDependency.Start(strConn);
-
+            SqlDependency.Start(strCon);
+            refresh_table();
+            start_sensorvalue_table_dependency();
             InitializeGetCountData();
         }
 
         private void InitializeGetCountData()
         {
             GetCountData();
-            label1.Text = OutTrueCount.ToString();
-            OutTrueCount = 0;//초기화
-            label2.Text = TopTrueCount.ToString();
-            TopTrueCount = 0;
-            label3.Text = NewTrueCount.ToString();
-            NewTrueCount = 0;
-            label6.Text = OutTotal.ToString();
-            OutTotal = 0;
-            label7.Text = TopTotal.ToString();
-            TopTotal = 0;
-            label8.Text = NewTotal.ToString();
-            NewTotal = 0;
+
+            label1.Text = Count1.ToString();
+            Count1 = 0;//초기화
+
+            label2.Text = Count2.ToString();
+            Count2 = 0;
+
+            label3.Text = Count3.ToString();
+            Count3 = 0;
+
+            label6.Text = Total1.ToString();
+            Total1 = 0;
+
+            label7.Text = Total2.ToString();
+            Total2 = 0;
+
+            label8.Text = Total3.ToString();
+            Total3 = 0;
         }
         private int GetCountData()
         {
             string sqlCommand = "select * from SensorValue;";
 
-            using (con = new SqlConnection(@strConn))
+            using (con = new SqlConnection(@strCon))
             {
                 SqlCommand command = new SqlCommand(sqlCommand, con);
                 con.Open();
@@ -65,31 +74,30 @@ namespace Parkings
                 {
                     sensorvalue = (bool)reader["SensorValue"];
                     parkinglotid = (int)reader["ParkingLotId"];
-                    parkingpositionid = (int)reader["ParkingPositionId"];
 
                     if (sensorvalue.ToString() == "True" && parkinglotid.ToString() == "1")
                     {
-                        OutTrueCount++;
+                        Count1++;
                     }
                     if (sensorvalue.ToString() == "True" && parkinglotid.ToString() == "2")
                     {
-                        TopTrueCount++;
+                        Count2++;
                     }
                     if (sensorvalue.ToString() == "True" && parkinglotid.ToString() == "3")
                     {
-                        NewTrueCount++;
+                        Count3++;
                     }
                     if (parkinglotid.ToString() == "1")
                     {
-                        OutTotal++;
+                        Total1++;
                     }
                     if (parkinglotid.ToString() == "2")
                     {
-                        TopTotal++;
+                        Total2++;
                     }
                     if (parkinglotid.ToString() == "3")
                     {
-                        NewTotal++;
+                        Total3++;
                     }
 
                 }
@@ -104,9 +112,111 @@ namespace Parkings
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SqlDependency.Stop(strConn);
+            //SqlDependency.Stop(strCon);
+            try
+            {
+                stop_sensorvalue_table_dependency();
+                    
+            }
+            catch(Exception ex) { return; }
 
         }
 
+        private bool start_sensorvalue_table_dependency()
+        {
+            try
+            {
+                sensorvalue_table_dependency = new SqlTableDependency<SensorValue>(strCon);
+                sensorvalue_table_dependency.OnChanged += sensorvalue_table_dependency_Changed;
+                // sensorvalue_table_dependency.OnError += sensorvalue_table_dependency_OnError;
+                sensorvalue_table_dependency.Start();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return false;
+        }
+
+        private bool stop_sensorvalue_table_dependency()
+        {
+            try
+            {
+                if (sensorvalue_table_dependency != null)
+                {
+                    sensorvalue_table_dependency.Stop();
+
+                    return true;
+                }
+            }
+            catch (Exception ex) { return false; }
+            return false;
+        }
+        private void refresh_table()
+        {
+            string sql = "select * from SensorValue";
+            con = new SqlConnection(strCon);
+            SqlDataAdapter dataadapter = new SqlDataAdapter(sql, con);
+            DataSet ds = new DataSet();
+            con.Open();
+            dataadapter.Fill(ds, "SensorValue");
+            con.Close();
+            ThreadSafe(() => dataGridView1.DataSource = ds);
+            ThreadSafe(() => dataGridView1.DataMember = "SensorValue");
+            ThreadSafe(() => dataGridView1.DataMember = "ParkingPositionId");
+            ThreadSafe(() => dataGridView1.DataMember = "PkaringLotId");
+
+        }
+        private void ThreadSafe(MethodInvoker method)
+        {
+            try
+            {
+                if (InvokeRequired)
+                    Invoke(method);
+                else
+                    method();
+            }
+            catch (ObjectDisposedException) { }
+
+        }
+
+        private void sensorvalue_table_dependency_Changed(object sender, RecordChangedEventArgs<SensorValue> e)
+        {
+            try
+            {
+                var changedEntity = e.Entity;
+                switch (e.ChangeType)
+                {
+                    case ChangeType.Insert:
+                        {
+                            refresh_table();
+                            InitializeGetCountData();
+                        }
+                        break;
+
+                    case ChangeType.Update:
+                        {
+                            refresh_table();
+                            InitializeGetCountData();
+                        }
+                        break;
+                    case ChangeType.Delete:
+                        {
+                            refresh_table();
+                            InitializeGetCountData();
+                        }
+                        break;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                return;
+            }
+
+            }
     }
 }
+
+  
