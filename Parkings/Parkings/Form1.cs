@@ -164,8 +164,8 @@ namespace Parkings
             con.Close();
             ThreadSafe(() => dataGridView1.DataSource = ds);
             ThreadSafe(() => dataGridView1.DataMember = "SensorValue");
-            ThreadSafe(() => dataGridView1.DataMember = "ParkingPositionId");
-            ThreadSafe(() => dataGridView1.DataMember = "PkaringLotId");
+          //ThreadSafe(() => dataGridView1.DataMember = "ParkingPositionId");
+          //ThreadSafe(() => dataGridView1.DataMember = "PkaringLotId");
 
         }
         private void ThreadSafe(MethodInvoker method)
