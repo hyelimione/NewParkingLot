@@ -1,7 +1,6 @@
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\bin\Debug\Parkings.exe.config
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\bin\Debug\Parkings.exe
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\bin\Debug\Parkings.pdb
-C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.csprojAssemblyReference.cache
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.Form1.resources
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.Properties.Resources.resources
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.csproj.GenerateResource.cache
@@ -36,3 +35,7 @@ C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\bin\Debug\ja\DevExpress.Pdf.v19.1.Core.resources.dll
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\bin\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.csproj.CopyComplete
+C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.Form2.resources
+C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.Form3.resources
+C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.csprojAssemblyReference.cache
+C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\obj\Debug\Parkings.UserControl2.resources

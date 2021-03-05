@@ -1,0 +1,54 @@
+TableDependency.SqlClient.EventArgs.SqlRecordChangedEventArgs`1[Parkings.SensorValue]15:07:30:894	
+Update values:	ParkingLotId:1	ParkingPositionId:1System.Data.SqlClient.SqlException (0x80131904): DDL 실행 중 참조된 엔터티 'INSERTED'이(가) 수정되었습니다. 작업을 다시 시도하십시오.
+   위치: System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   위치: System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   위치: System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   위치: System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   위치: System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   위치: System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   위치: System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   위치: TableDependency.SqlClient.SqlTableDependency`1.CreateSqlServerDatabaseObjects(IEnumerable`1 userInterestedColumns, String columnsForUpdateOf, Int32 watchDogTimeOut)
+   위치: TableDependency.SqlClient.SqlTableDependency`1.CreateDatabaseObjects(Int32 timeOut, Int32 watchDogTimeOut)
+   위치: TableDependency.SqlClient.SqlTableDependency`1.Start(Int32 timeOut, Int32 watchDogTimeOut)
+   위치: Parkings.UserControl2.start_sensorvalue_table_dependency() 파일 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\UserControl2.cs:줄 54
+ClientConnectionId:65528598-d241-48bc-b1fc-b4080359b76e
+Error Number:2021,State:1,Class:16System.Data.SqlClient.SqlException (0x80131904): DDL 실행 중 참조된 엔터티 'INSERTED'이(가) 수정되었습니다. 작업을 다시 시도하십시오.
+   위치: System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   위치: System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   위치: System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   위치: System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   위치: System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   위치: System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   위치: System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   위치: TableDependency.SqlClient.SqlTableDependency`1.CreateSqlServerDatabaseObjects(IEnumerable`1 userInterestedColumns, String columnsForUpdateOf, Int32 watchDogTimeOut)
+   위치: TableDependency.SqlClient.SqlTableDependency`1.CreateDatabaseObjects(Int32 timeOut, Int32 watchDogTimeOut)
+   위치: TableDependency.SqlClient.SqlTableDependency`1.Start(Int32 timeOut, Int32 watchDogTimeOut)
+   위치: Parkings.UserControl2.start_sensorvalue_table_dependency() 파일 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\UserControl2.cs:줄 54
+ClientConnectionId:65528598-d241-48bc-b1fc-b4080359b76e
+Error Number:2021,State:1,Class:16System.Data.SqlClient.SqlException (0x80131904): DDL 실행 중 참조된 엔터티 'INSERTED'이(가) 수정되었습니다. 작업을 다시 시도하십시오.
+   위치: System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   위치: System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   위치: System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   위치: System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   위치: System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   위치: System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   위치: System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   위치: TableDependency.SqlClient.SqlTableDependency`1.CreateSqlServerDatabaseObjects(IEnumerable`1 userInterestedColumns, String columnsForUpdateOf, Int32 watchDogTimeOut)
+   위치: TableDependency.SqlClient.SqlTableDependency`1.CreateDatabaseObjects(Int32 timeOut, Int32 watchDogTimeOut)
+   위치: TableDependency.SqlClient.SqlTableDependency`1.Start(Int32 timeOut, Int32 watchDogTimeOut)
+   위치: Parkings.UserControl2.start_sensorvalue_table_dependency() 파일 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\UserControl2.cs:줄 56
+ClientConnectionId:8e212626-ddf6-43ac-bb52-c0e7fd01bb5e
+Error Number:2021,State:1,Class:16System.Data.SqlClient.SqlException (0x80131904): DDL 실행 중 참조된 엔터티 'INSERTED'이(가) 수정되었습니다. 작업을 다시 시도하십시오.
+   위치: System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   위치: System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   위치: System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   위치: System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   위치: System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   위치: System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   위치: System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   위치: TableDependency.SqlClient.SqlTableDependency`1.CreateSqlServerDatabaseObjects(IEnumerable`1 userInterestedColumns, String columnsForUpdateOf, Int32 watchDogTimeOut)
+   위치: TableDependency.SqlClient.SqlTableDependency`1.CreateDatabaseObjects(Int32 timeOut, Int32 watchDogTimeOut)
+   위치: TableDependency.SqlClient.SqlTableDependency`1.Start(Int32 timeOut, Int32 watchDogTimeOut)
+   위치: Parkings.UserControl2.start_sensorvalue_table_dependency() 파일 C:\Users\ryun3\OneDrive\바탕 화면\workspace\NewParkingLot\Parkings\Parkings\UserControl2.cs:줄 56
+ClientConnectionId:a8581b96-afe7-4691-8669-a357ef05e7e7
+Error Number:2021,State:1,Class:16
